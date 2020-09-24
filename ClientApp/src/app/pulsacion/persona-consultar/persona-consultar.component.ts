@@ -8,8 +8,10 @@ import { PersonaService } from '../../services/persona.service';
   styleUrls: ['./persona-consultar.component.css']
 })
 export class PersonaConsultarComponent implements OnInit {
-
+  
+  searchText: string = '';
   personas:Persona[];
+  
   constructor(private personaService: PersonaService) { }
 
   ngOnInit() {
