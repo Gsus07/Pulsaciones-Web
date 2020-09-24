@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Persona } from './../pulsacion/models/persona'
+import { Persona } from './../pulsacion/models/persona';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,8 @@ export class PersonaService {
 
   constructor() { }
 
-  get(): Persona[]{
-    return JSON.parse(localStorage.getItem('datos'));
+  get(): Observable<Persona[]> {
+    return of(JSON.parse(localStorage.getItem('datos')));
 
   }
   post(persona: Persona){
